@@ -1,0 +1,36 @@
+1. select e.ename, d.dname
+from emp e, dept d
+order by d.dname;
+
+2. select e.ename, d.deptno, d.dname
+from emp e, dept d;
+
+3. select e.ename, d.loc, d.deptno
+from emp e, dept d
+where e.sal>1500;
+
+4. select e.empno, e.ename, s.grade
+from emp e, salgrade s;
+
+5. select s.grade
+from emp e, salgrade s
+where e.sal between s.losal and s.hisal;
+
+6. select *
+from emp e, salgrade s
+where s.grade=3;
+
+7. select *
+from emp, dept
+where emp.deptno=dept.deptno and dept.loc='DALLAS';
+
+8. select *
+from emp
+where (sal*12)=36000 or job='CLERK';
+
+9. select dname
+from dept
+where not exists (select *
+                 from emp e, dept d
+                 where e.deptno=d.deptno
+                );
